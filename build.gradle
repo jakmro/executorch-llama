@@ -1,0 +1,24 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 31
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 31
+    }
+
+    sourceSets {
+        main.java.srcDirs = ['src/main/java', 'src/main/kotlin']
+        main.resources.srcDirs = ['src/main/resources']
+    }
+}
+
+dependencies {
+    implementation files('your-library.aar')
+}
+
+repositories {
+    flatDir {
+        dirs './'
+    }
+}
